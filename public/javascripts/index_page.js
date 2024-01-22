@@ -20,6 +20,7 @@ function showEmail() {
         const logoutBtn = document.createElement("button")
         const email = document.createElement("p")
         logoutBtn.textContent = "Logout"
+        logoutBtn.id = "logout"
         logoutBtn.addEventListener("click", onLogout)
         email.textContent = data
         document.getElementById("box").appendChild(logoutBtn)
