@@ -22,13 +22,6 @@ router.get('/list', validateToken, (req, res, next) => {
   
 });
 
-router.get('/login', (req, res, next) => {
-  res.render('login');
-});
-
-router.get('/register', function(req, res, next) {
-  res.render('register');
-});
 
 router.post('/login', 
   upload.none(),
@@ -64,11 +57,6 @@ router.post('/login',
 });
 
 
-
-router.get('/register', (req, res, next) => {
-  res.render('register');
-});
-
 router.post('/register', 
   body("email").isEmail(),
   body("password").isLength({min: 5}),
@@ -91,7 +79,7 @@ router.post('/register',
                 password: hash
               })
               .then((ok) => {
-                return res.redirect("/login");
+                return res.redirect("/login.html");
               }
             );
           });
