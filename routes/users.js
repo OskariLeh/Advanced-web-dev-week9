@@ -88,6 +88,9 @@ router.post('/register',
     });
 });
 
+router.post("/email", (req, res) => {
+  return res.json(jwt.decode(req.body.token).email)
+})
 
 
 module.exports = router;
